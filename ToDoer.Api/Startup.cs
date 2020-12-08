@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ToDoer.Api.Data;
+using ToDoer.Api.Services;
+using ToDoer.Api.Validation;
 
 namespace ToDoer.Api
 {
@@ -31,6 +33,9 @@ namespace ToDoer.Api
             
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddTransient<ITasksValidator, TasksValidator>();
+            services.AddTransient<ITaskService, TasksService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
