@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoer.Web", "ToDoer.Web\ToDoer.Web.csproj", "{E0D47A3C-2531-422A-94B1-50D80ACD4E6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoer.Api", "ToDoer.Api\ToDoer.Api.csproj", "{739593E9-E752-489A-ADC0-6CD142B1833D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoer.Tests", "ToDoer.Tests\ToDoer.Tests.csproj", "{EBE96717-20F5-41BD-B963-23818D86EB38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E0D47A3C-2531-422A-94B1-50D80ACD4E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E0D47A3C-2531-422A-94B1-50D80ACD4E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E0D47A3C-2531-422A-94B1-50D80ACD4E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E0D47A3C-2531-422A-94B1-50D80ACD4E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{739593E9-E752-489A-ADC0-6CD142B1833D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739593E9-E752-489A-ADC0-6CD142B1833D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739593E9-E752-489A-ADC0-6CD142B1833D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739593E9-E752-489A-ADC0-6CD142B1833D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE96717-20F5-41BD-B963-23818D86EB38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE96717-20F5-41BD-B963-23818D86EB38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE96717-20F5-41BD-B963-23818D86EB38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE96717-20F5-41BD-B963-23818D86EB38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
