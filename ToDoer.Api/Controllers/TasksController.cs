@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ToDoer.Api.Models;
 using ToDoer.Api.Services;
+using ToDoer.Api.Validation;
 
 namespace ToDoer.Api.Controllers
 {
@@ -9,11 +10,13 @@ namespace ToDoer.Api.Controllers
     [Route("[controller]")]
     public class TasksController : ControllerBase
     {
-        private ITaskService _taskService;
+        private readonly ITaskService _taskService;
+        private readonly ITasksValidator _tasksValidator;
 
-        public TasksController(ITaskService taskService)
+        public TasksController(ITaskService taskService, ITasksValidator tasksValidator)
         {
             _taskService = taskService;
+            _tasksValidator = tasksValidator;
         }
         
         [HttpGet]
@@ -25,6 +28,7 @@ namespace ToDoer.Api.Controllers
         [HttpPost]
         public void Post(Task task)
         {
+            _tasksValidator.Validate(task);
             _taskService.Insert(task);
         }
     }
