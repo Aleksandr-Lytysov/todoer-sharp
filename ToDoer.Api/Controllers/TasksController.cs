@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using ToDoer.Api.Models;
 using ToDoer.Api.Services;
@@ -20,16 +21,24 @@ namespace ToDoer.Api.Controllers
         }
         
         [HttpGet]
-        public IEnumerable<Task> Get()
+        public IActionResult Get()
         {
-            return _taskService.Get();
+            return Ok(_taskService.Get());
         }
         
         [HttpPost]
-        public void Post(Task task)
+        public IActionResult Post(Task task)
         {
-            _tasksValidator.Validate(task);
-            _taskService.Insert(task);
+            try
+            {
+                _tasksValidator.Validate(task);
+                _taskService.Insert(task);
+            }
+            catch (TasksValidatorException ex)
+            {
+                return BadRequest(ex);
+            }
+            return Ok();
         }
     }
 }
