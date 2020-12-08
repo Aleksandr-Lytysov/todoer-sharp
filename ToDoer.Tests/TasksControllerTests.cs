@@ -45,11 +45,5 @@ namespace ToDoer.Tests
             var result = target.Post(new Task());
             Assert.IsInstanceOf<OkResult>(result);
         }
-
-        [Test]
-        public void FailToCheckGithubActions()
-        {
-            Assert.Fail();
-        }
     }
 }
